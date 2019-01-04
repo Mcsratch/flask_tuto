@@ -5,7 +5,7 @@
     <div class="section-content">
       <h2>Create an account</h2>
 
-      <form method="POST" action="/signup">
+      <form method="POST" action="/signup" novalidate>
         {{ form.hidden_tag() }}
 
         <div class="form-group">
@@ -57,7 +57,9 @@
         </div>
 
         {{ form.submit(class="btn-primary") }}
+
       </form>
+
     </div>
   </main>
 {% endblock %}

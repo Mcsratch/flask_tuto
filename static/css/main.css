@@ -103,12 +103,12 @@ header {
 .logo {
   float: right;
   position: relative;
-  top: 0px;
+  top: -5px;
 }
 
 .logo img {
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 80px;
 }
 
 
@@ -118,7 +118,7 @@ header {
   font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 19px;
   letter-spacing: 2.5px;
-  text-transform: uppercase;
+
 }
 
 .title a, .title a:visited {
