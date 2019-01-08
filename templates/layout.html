@@ -7,14 +7,24 @@
   <body>
     <header>
       <div class="container">
-        <div class="logo">
-          <img src="static/img/logo1.PNG">
-        </div>
+
 
         <h1 class="title">One7Trees</h1>
 
+        <div class="logo">
+          <img src="static/img/logo1.PNG">
+        </div>
       </div>
     </header>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
 
     {% block content %}
     {% endblock %}

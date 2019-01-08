@@ -2,6 +2,7 @@
  * General
  */
 
+
 html, body, h1 {
   margin: 0;
   padding: 0;
@@ -23,6 +24,28 @@ a {
   text-decoration: none;
   display: inline-block;
 }
+
+
+/* enter */
+
+
+.enter {
+
+
+
+}
+
+.enter img {
+  display: block;
+  margin: 50px auto auto auto;
+  width: 500px;
+  height:  500px;
+  background-color: white;
+  object-fit: none;
+
+}
+
+
 
 .container {
   width: 1000px;
@@ -76,8 +99,8 @@ a {
 }
 
 .btn-secondary {
-  background: #ffffff;
-  border: 1px solid #e6e6e6;
+  background: #f4f4f4;
+  /*border: 1px solid #e6e6e6; */
   color: #3372df;
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
@@ -107,18 +130,34 @@ header {
 }
 
 .logo img {
-  width: 90px;
+  width: 80px;
   height: 80px;
 }
 
 
 .title {
+
   float: left;
   padding: 22px 32px;
   font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 19px;
   letter-spacing: 2.5px;
 
+}
+
+.logedin {
+  float: right;
+  margin-top: -10px;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #db4437;
+}
+
+.logedin a, .logedin a:visited  {
+padding-left: 5px;
+  float: right;
+  color: #3a3a3a;
 }
 
 .title a, .title a:visited {
@@ -219,7 +258,9 @@ header {
   color: #db4437;
 }
 
-
+.flashes li {
+  color: #db4437;
+}
 /*
  * Sign up
  */

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="hero-section">
+    <div class="container">
+      {% if email %}
+      <h3 class="logedin">loged in as: {{ email }}
+      <a href="{{ url_for('logout') }}" >logout</a>
+    </h3>
+      {% endif %}
+    </p>
+    <h1>Home</h1>
+
+    </div>
+  </main>
+{% endblock %}
