@@ -1,9 +1,15 @@
-{% extends "layout.html" %}
+{% extends "layoutsign.html" %}
 
 {% block content %}
-  <main class="container signup-section">
-    <div class="section-content">
+  <div class="signup-section-logsign">
+      <div class="logo-logsign">
+          <a href="{{ url_for('index') }}"><img src="static/img/logo1-all - inv2.png"></a>
+      </div>
+      <div class="name-logsign">
       <h2>Create an account</h2>
+      </div>
+
+      <div class="section-content-logsign">
 
       <form method="POST" action="/signup" novalidate>
         {{ form.hidden_tag() }}
@@ -55,11 +61,14 @@
 
           {{ form.password }}
         </div>
-
+        <div class="button-login">
         {{ form.submit(class="btn-primary") }}
-
+        </div>
       </form>
 
     </div>
-  </main>
+    <div class="section-content-logsign">
+      <h4>Already have an account?  <a href="{{ url_for('login') }}" >Sign in.</a></h4>
+    </div>
+  </div>
 {% endblock %}

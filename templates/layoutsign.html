@@ -5,19 +5,7 @@
     <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <div class="container">
-
-
-        <h1 class="title">One7trees</h1>
-
-        <div class="logo">
-          <a href="{{ url_for('index') }}" ><img src="static/img/logo1.PNG"></a>
-        </div>
-      </div>
-    </header>
-
-
+    
     {% block content %}
     {% endblock %}
 

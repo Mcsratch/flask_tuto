@@ -1,6 +1,8 @@
 from flask import Flask, flash, render_template, request, session, redirect, url_for
 from models import db, User
-from forms import SignupForm, LoginForm
+from forms import SignupForm, LoginForm, ResetForm
+from datetime import timedelta
+
 
 
 app = Flask(__name__)
@@ -12,8 +14,16 @@ app.secret_key = "development"
 
 @app.route("/")
 def index():
- return render_template("index.html")
- #return render_template("7trees.html")
+    #return render_template("7trees.html")
+    return render_template("index.html")
+
+@app.route("/resetpassword")
+def resetpassword():
+    #to develop
+    form=ResetForm()
+    return render_template('resetpassword.html', form=form)
+
+    #return render_template("7trees.html")
 
 
 @app.route("/about")
@@ -33,7 +43,8 @@ def signup():
       newuser = User(form.first_name.data, form.last_name.data, form.email.data, form.password.data)
       db.session.add(newuser)
       db.session.commit()
-
+      session.permanent = True
+      app.permanent_session_lifetime = timedelta(minutes=1)
       session['email'] = newuser.email
       return redirect(url_for('home'))
 
@@ -61,6 +72,8 @@ def login():
           user = User.query.filter_by(email=email).first()
           if user is not None and user.check_password(password):
               session['email'] = form.email.data
+              session.permanent = True
+              app.permanent_session_lifetime = timedelta(minutes=1)
               return redirect(url_for('home'))
           else:
               message = "Invalid Login or Password credentials"
@@ -70,8 +83,9 @@ def login():
         return render_template('login.html', form=form)
 @app.route("/logout")
 def logout():
+    if 'email' in session:
+        flash('You are now logged out')
     session.pop('email', None)
-    flash('You are now logged out')
     return redirect(url_for('index'))
 
 if __name__ == "__main__":
